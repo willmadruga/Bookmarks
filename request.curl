@@ -1,0 +1,12 @@
+#!/bin/sh
+# usage:
+# ./request.curl [create|search] bookmark-sample.json
+# remember to set FAAS_URL env variable
+
+# TODO: make this flexible enough to handle all requests
+
+curl --request POST \
+	--header 'Content-Type: application/json; charset=utf-8' \
+	--header 'Accept: */*' \
+	--data @$2 \
+	$FAAS_URL$1
